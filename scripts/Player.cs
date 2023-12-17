@@ -3,14 +3,12 @@ using System;
 
 public partial class Player : Area2D
 {
-	[Export] public int movementSpeed = 120;
-	public Vector2 screenSize;
+	[Export] public int movementSpeed = 1000;
 
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		screenSize = GetViewportRect().Size;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,5 +42,10 @@ public partial class Player : Area2D
 		}
 
 		Position += velocity * (float)delta;
+
+		Position = new Vector2(
+			x: Mathf.Clamp(Position.X, 24, 1000 - 16),
+			y: Mathf.Clamp(Position.Y, 8, 497 - 20)
+		);
 	}
 }

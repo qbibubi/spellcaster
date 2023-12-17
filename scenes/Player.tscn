@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_fmuqe"]
 [ext_resource type="Texture2D" uid="uid://c3xcvtwjj5or8" path="res://scenes/satyr-Sheet.png" id="2_xm26i"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fbul7"]
-radius = 12.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7yue"]
+radius = 2.5
+height = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gakp0"]
 atlas = ExtResource("2_xm26i")
@@ -118,18 +119,25 @@ animations = [{
 }]
 
 [node name="Player" type="Area2D"]
+scale = Vector2(3, 3)
+collision_mask = 0
 script = ExtResource("1_fmuqe")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_fbul7")
+shape = SubResource("CapsuleShape2D_e7yue")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+position = Vector2(-2, -5)
 sprite_frames = SubResource("SpriteFrames_ijf6r")
 animation = &"walk"
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, -3)
+metadata/_edit_group_ = true
