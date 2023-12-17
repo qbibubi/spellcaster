@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh8us2qqax5sy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ds6qc"]
+
+[node name="Player" type="Area2D"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ds6qc")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
