@@ -119,6 +119,7 @@ animations = [{
 }]
 
 [node name="Player" type="Area2D"]
+texture_filter = 1
 scale = Vector2(3, 3)
 collision_mask = 0
 script = ExtResource("1_fmuqe")
