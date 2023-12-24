@@ -5,7 +5,6 @@ public partial class Player : Area2D
 {
 	[Export] public int movementSpeed = 1000;
 
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
